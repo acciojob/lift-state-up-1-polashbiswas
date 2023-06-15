@@ -1,14 +1,11 @@
 import React from "react";
 
 
-const Child = ({setState, state}) => {
+const Child = ({setShowModal, showModal}) => {
 
     function handelState(){
-        if(!state){
-        setState(true);
-        }else{
-            setState(false)
-        }
+        setShowModal(true);
+        
     }
 
     return(
@@ -16,7 +13,7 @@ const Child = ({setState, state}) => {
             <h2>Childe Component</h2>
             <button onClick={handelState}>Show Model</button>
             {
-                state && 
+                showModal && 
                 <div>
                 <h3>Modal Content</h3>
                 <p>This is the modal content</p>
